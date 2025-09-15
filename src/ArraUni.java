@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.Arrays;
 
 public class ArraUni extends methods {
     // operaciones
@@ -14,6 +15,8 @@ public class ArraUni extends methods {
     private int index;
     private int modified;
     private int remove = 0;
+    private int suma;
+    private int Rellenado;
 
     // Rellenado
     @Override
@@ -30,10 +33,7 @@ public class ArraUni extends methods {
     @Override
     public void MostrarDatos() {
         System.out.print("Los datos del arreglo sin ordenar son: \n");
-        // ciclo para mostrar arreglo
-        for (i = 0; i < 10; i++) {
-            System.out.print(unidimensional[i] + "-");
-        }
+        System.out.println(Arrays.toString(unidimensional));
     }
 
     // Acceder a un valor del arreglo
@@ -55,10 +55,8 @@ public class ArraUni extends methods {
         System.out.println("\n Posision modificada: " + index + "\n Dato nuevo: " + modified);
         unidimensional[index-1] = modified;
         System.out.println("Arreglo Modificado: ");
-        // ciclo para mostrar arreglo
-        for (i = 0; i < 10; i++) {
-            System.out.print(unidimensional[i] + "-");
-        }
+        // Muestra el arreglo
+        System.out.println(Arrays.toString(unidimensional));
     }
 
     // Eliminar Elemento (no recorre posision, solo deja en blanco)
@@ -69,16 +67,47 @@ public class ArraUni extends methods {
         unidimensional[index-1] = remove;
 
         System.out.println("\n Arreglo con valor eliminado");
-        // ciclo para mostrar arreglo
-        for (i = 0; i < 10; i++) {
-            System.out.print(unidimensional[i] + "-");
-        }
+        System.out.println(Arrays.toString(unidimensional));
     }
+
     // Eliminar Elemento (En posision con recorrido)
-
-
     @Override
     public void EliminarElementoRecorrido() {
-        index = Parse
+        index = Integer.parseInt(JOptionPane.showInputDialog(null,
+                 "Ingresa la posision del elemento que quieres eliminar"));
+        int unidimensionalNew[] = new int[unidimensional.length - 1];
+        System.arraycopy(unidimensional, 0, unidimensionalNew, 0, index - 1);
+        System.arraycopy(unidimensional, index , unidimensionalNew , index - 1, unidimensional.length - index);
+        System.out.println(Arrays.toString(unidimensionalNew));
+    }
+
+    // Cantidad de de elementos del array
+    @Override
+    public void CantidadElementos() {
+        System.out.println(Arrays.toString(unidimensional));
+        System.out.println("La cantidad de elementos del array es: " + unidimensional.length);
+    }
+
+    // ordenar y mostrar ordenados
+    @Override
+    public void Ordenar() {
+        Arrays.sort(unidimensional);
+        System.out.println("Array ordenado: ");
+        System.out.print(Arrays.toString(unidimensional));
+    }
+
+    // Sumar array
+    @Override
+    public void Suma() {
+        suma = Arrays.stream(unidimensional).sum();
+        System.out.println("La suma es: " + suma);
+    }
+
+    // Rellenado automatico con fill
+    @Override
+    public void RellenadoAutomatico() {
+        Rellenado = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el valor con que lo quieres rellenar;"));
+        Arrays.fill(unidimensional, Rellenado);
+        System.out.println(Arrays.toString(unidimensional));
     }
 }

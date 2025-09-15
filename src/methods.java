@@ -13,7 +13,7 @@ abstract class methods {
     public void Ordenar (){
 
     }
-    public void AccederValor (){
+    public void AccederValor(){
 
     }
     public void ModificarValor (){
@@ -34,9 +34,6 @@ abstract class methods {
 
     }
     public void MostrarDatos(){
-
-    }
-    public void MostrarDatosOrdenados (){
 
     }
 }
