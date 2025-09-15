@@ -32,6 +32,7 @@ public class ArraUni extends methods {
     // Mostrar arreglo
     @Override
     public void MostrarDatos() {
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.print("Los datos del arreglo sin ordenar son: \n");
         System.out.println(Arrays.toString(unidimensional));
     }
@@ -41,7 +42,7 @@ public class ArraUni extends methods {
     public void AccederValor() {
         index = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Ingresa la posision del dato que quieres conocer:"));
-
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("\n El valor es: " + unidimensional[index - 1]);
     }
 
@@ -52,6 +53,8 @@ public class ArraUni extends methods {
                 "Ingrese la posision del dato que quiere modificar;"));
         modified = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Ingrese el dato nuevo"));
+
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("\n Posision modificada: " + index + "\n Dato nuevo: " + modified);
         unidimensional[index-1] = modified;
         System.out.println("Arreglo Modificado: ");
@@ -65,7 +68,7 @@ public class ArraUni extends methods {
         index = Integer.parseInt(JOptionPane.showInputDialog(null,
                 "Ingresa la posision que quieres eliminar"));
         unidimensional[index-1] = remove;
-
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("\n Arreglo con valor eliminado");
         System.out.println(Arrays.toString(unidimensional));
     }
@@ -78,6 +81,8 @@ public class ArraUni extends methods {
         int unidimensionalNew[] = new int[unidimensional.length - 1];
         System.arraycopy(unidimensional, 0, unidimensionalNew, 0, index - 1);
         System.arraycopy(unidimensional, index , unidimensionalNew , index - 1, unidimensional.length - index);
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
+        System.out.println("Arreglo con elemento eliminado");
         System.out.println(Arrays.toString(unidimensionalNew));
     }
 
@@ -85,6 +90,7 @@ public class ArraUni extends methods {
     @Override
     public void CantidadElementos() {
         System.out.println(Arrays.toString(unidimensional));
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("La cantidad de elementos del array es: " + unidimensional.length);
     }
 
@@ -92,6 +98,7 @@ public class ArraUni extends methods {
     @Override
     public void Ordenar() {
         Arrays.sort(unidimensional);
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("Array ordenado: ");
         System.out.print(Arrays.toString(unidimensional));
     }
@@ -100,6 +107,7 @@ public class ArraUni extends methods {
     @Override
     public void Suma() {
         suma = Arrays.stream(unidimensional).sum();
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("La suma es: " + suma);
     }
 
@@ -108,6 +116,8 @@ public class ArraUni extends methods {
     public void RellenadoAutomatico() {
         Rellenado = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingresa el valor con que lo quieres rellenar;"));
         Arrays.fill(unidimensional, Rellenado);
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
+        System.out.println("Arreglo rellenado automaticamente: ");
         System.out.println(Arrays.toString(unidimensional));
     }
 }

@@ -40,6 +40,7 @@ public class ArraBid extends methods{
     //Mostrar datos de la matriz
     @Override
     public void MostrarDatos() {
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("La matriz es la siguiente: ");
         // ciclo para mostrar la matriz
         for ( i = 0; i < bidimensional.length; i++) {
@@ -55,6 +56,7 @@ public class ArraBid extends methods{
         indexColumna = Integer.parseInt(JOptionPane.showInputDialog
                 (null, "Ingresa la columna de la fila para acceder al valor"));
 
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("El valor es: " + bidimensional[indexFila-1][indexColumna-1]);
     }
 
@@ -68,6 +70,7 @@ public class ArraBid extends methods{
                 (null, "Ingresa la columna de la fila para modificar"));
         modified = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese el nuevo valor"));
 
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("Posision Modificada: " + "\n Fila: " + indexFila
                 + " Columna: " + indexColumna + " \n Nuevo valor: " + modified);
         bidimensional[indexFila-1][indexColumna-1] = modified;
@@ -84,7 +87,7 @@ public class ArraBid extends methods{
                 (null, "Ingrese el numero de fila que quieres eliminar"));
         indexColumna = Integer.parseInt(JOptionPane.showInputDialog
                 (null, "Ingresa la columna de la fila que quieres eliminar"));
-
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("Arreglo con valor eliminado");
         bidimensional[indexFila-1][indexColumna-1] = remove;
         for ( i = 0; i < bidimensional.length; i++) {
@@ -113,6 +116,7 @@ public class ArraBid extends methods{
             }
         }
 
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("\n Arreglo con valor eliminado");
         for ( i = 0; i < bidimensional.length; i++) {
             System.out.println(Arrays.toString(bidimensionalNew[i]));
@@ -125,6 +129,7 @@ public class ArraBid extends methods{
         for ( i = 0; i < bidimensional.length; i++) {
             System.out.println(Arrays.toString(bidimensional[i]));
         }
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("La cantidad de elementos de la matriz es: " + bidimensional.length * bidimensional.length);
     }
 
@@ -147,7 +152,7 @@ public class ArraBid extends methods{
                 bidimensional[i][j] = ordenado[ordenarValores++];
             }
         }
-
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("Matriz Ordenada");
         for ( i = 0; i < bidimensional.length; i++) {
             System.out.println(Arrays.toString(bidimensional[i]));
@@ -166,7 +171,7 @@ public class ArraBid extends methods{
                 arregloPlanoSumar[ordenarValores++] = bidimensional[i][j];
             }
         }
-
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         suma = Arrays.stream(arregloPlanoSumar).sum();
         System.out.println("La suma es: " + suma);
     }
@@ -183,6 +188,7 @@ public class ArraBid extends methods{
             }
             i++;
         }
+        JOptionPane.showMessageDialog(null, "Resultado mostrado en consola" );
         System.out.println("Matriz Rellenada");
         for ( i = 0; i < bidimensional.length; i++) {
             System.out.println(Arrays.toString(bidimensional[i]));
